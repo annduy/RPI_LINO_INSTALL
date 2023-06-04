@@ -88,7 +88,7 @@ python-dev \
 build-essential \
 #python-gudev
 
-sudo easy_install pip
+#sudo easy_install pip
 python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"
 pip install -U platformio
 #sudo python2.7 -m pip install -U platformio
@@ -197,7 +197,7 @@ if [ "$TRAVIS_BRANCH" = "devel" ]; then git checkout devel; fi
 #cd $HOME/linorobot_ws/src/linorobot/teensy/firmware
 cd $HOME/catkin_ws/src/linorobot/teensy/firmware
 export PLATFORMIO_CI_SRC=$PWD/src/firmware.ino
-platformio ci --project-conf=./platformio.ini --lib="./lib/ros_lib" --lib="./lib/config"  --lib="./lib/motor"  --lib="./lib/kinematics"  --lib="./lib/pid"  --lib="./lib/imu" --lib="./lib/encoder"
+~/.platformio/penv/bin/platformio ci --project-conf=./platformio.ini --lib="./lib/ros_lib" --lib="./lib/config"  --lib="./lib/motor"  --lib="./lib/kinematics"  --lib="./lib/pid"  --lib="./lib/imu" --lib="./lib/encoder"
 
 #echo "source $HOME/linorobot_ws/devel/setup.bash" >> $HOME/.bashrc
 echo "source $HOME/catkin_ws/devel/setup.bash" >> $HOME/.bashrc
